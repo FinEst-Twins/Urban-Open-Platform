@@ -11,4 +11,5 @@ platforms that the cities have. In both Helsinki and Tallinn, a key question is 
 
 In the FINEST Twins -project, the role of the Urban Open Platform is to both support the research streams, piloting programs and the actual use cases coming from the cities of Helsinki and Tallinn. This document explains the key elements of the design and implementation of the platform, including also description of the recommended operational model with the governance processes explained.
 
-This initiative is supported by the Estonian government (Ministry of Education and Research) and the European Commission (H2020 grant 856602)
+![EU Logo](https://github.com/mysmartlife-helsinki/common-images/blob/master/logo-eu.png) | This project has received funding from the Estonian government (Ministry of Education and Research) and the European Union’s Horizon 2020 research and innovation programme under grant agreement No 856602.
+----|------------
