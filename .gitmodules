@@ -14,3 +14,7 @@
 	path = UC7-Vehicle-Telemetry
 	url = https://github.com/sheenacodes/fvh_movingvehicle_in.git
 	branch = deliverable_11_2020
+[submodule "Common-Endpoints/Observations-To-Kafka"]
+	path = Common-Endpoints/Observations-To-Kafka
+	url = https://github.com/sheenacodes/fvh_kafka_observations.git
+	branch = deliverable_11_2020
