@@ -18,3 +18,7 @@
 	path = Common-Endpoints/Observations-To-Kafka
 	url = https://github.com/sheenacodes/fvh_kafka_observations.git
 	branch = deliverable_11_2020
+[submodule "Common-Endpoints/Observations-From-Postgres"]
+	path = Common-Endpoints/Observations-From-Postgres
+	url = https://github.com/sheenacodes/fvh_postgres_out.git
+	branch = deliverable_11_2020
