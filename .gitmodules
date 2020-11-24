@@ -2,3 +2,7 @@
 	path = UC1-Environmental-Noise-Monitoring
 	url = https://github.com/sheenacodes/fvh_sentilonoise_in.git
 	branch = deliverable_11_2020
+[submodule "UC3-Solar-Inverter"]
+	path = UC3-Solar-Inverter
+	url = https://github.com/sheenacodes/fvh_solarinverter_in.git
+	branch = deliverable_11_2020
