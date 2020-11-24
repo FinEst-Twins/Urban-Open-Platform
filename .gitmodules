@@ -6,3 +6,7 @@
 	path = UC3-Solar-Inverter
 	url = https://github.com/sheenacodes/fvh_solarinverter_in.git
 	branch = deliverable_11_2020
+[submodule "UC5-People-Counter"]
+	path = UC5-People-Counter
+	url = https://github.com/sheenacodes/fvh_peoplecounter_in.git
+	branch = deliverable_11_2020
