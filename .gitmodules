@@ -1,0 +1,24 @@
+[submodule "UC1-Environmental-Noise-Monitoring"]
+	path = UC1-Environmental-Noise-Monitoring
+	url = https://github.com/sheenacodes/fvh_sentilonoise_in.git
+	branch = deliverable_11_2020
+[submodule "UC3-Solar-Inverter"]
+	path = UC3-Solar-Inverter
+	url = https://github.com/sheenacodes/fvh_solarinverter_in.git
+	branch = deliverable_11_2020
+[submodule "UC5-People-Counter"]
+	path = UC5-People-Counter
+	url = https://github.com/sheenacodes/fvh_peoplecounter_in.git
+	branch = deliverable_11_2020
+[submodule "UC7-Vehicle-Telemetry"]
+	path = UC7-Vehicle-Telemetry
+	url = https://github.com/sheenacodes/fvh_movingvehicle_in.git
+	branch = deliverable_11_2020
+[submodule "Common-Endpoints/Observations-To-Kafka"]
+	path = Common-Endpoints/Observations-To-Kafka
+	url = https://github.com/sheenacodes/fvh_kafka_observations.git
+	branch = deliverable_11_2020
+[submodule "Common-Endpoints/Observations-From-Postgres"]
+	path = Common-Endpoints/Observations-From-Postgres
+	url = https://github.com/sheenacodes/fvh_postgres_out.git
+	branch = deliverable_11_2020
