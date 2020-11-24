@@ -10,3 +10,7 @@
 	path = UC5-People-Counter
 	url = https://github.com/sheenacodes/fvh_peoplecounter_in.git
 	branch = deliverable_11_2020
+[submodule "UC7-Vehicle-Telemetry"]
+	path = UC7-Vehicle-Telemetry
+	url = https://github.com/sheenacodes/fvh_movingvehicle_in.git
+	branch = deliverable_11_2020
