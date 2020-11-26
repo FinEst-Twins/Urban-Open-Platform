@@ -1,0 +1,23 @@
+[
+    {
+        "type": "record",
+        "namespace": "open311",
+        "name": "post_service_request",
+        "fields": [ 
+            { "name": "api_key", "type": "string"},
+            { "name": "service_code", "type": "int"},
+            { "name": "description", "type": "string", "doc": "This is free form text having min 10 and max 5,000 characters. This may contain line breaks, but not html or code." },                    
+            { "name": "title", "type": ["null", "string"], "default": null},
+            { "name": "lat", "type": ["null", "double"], "default": null, "doc": "Currently all service types require location, either lat/long or service_object_id." },
+            { "name": "long", "type": ["null", "double"], "default": null, "doc": "Currently all service types require location, either lat/long or service_object_id" },
+            { "name": "service_object_type", "type": ["null", "string"], "default": null, "doc": "If service_object_id is included in the request, then service_object_type must be included."},          
+            { "name": "service_object_id", "type": ["null", "int", "string"], "default": null, "doc": "If service_object_id is included in the request, then service_object_type must be included."},          
+            { "name": "address_string", "type": ["null", "string"], "default": null, "doc": "This is required if no lat/long or address_id are provided. This should be written from most specific to most general geographic unit, eg address number or cross streets, street name, neighborhood/district, city/town/village, county, postal code" },
+            { "name": "email", "type": ["null", "string"], "default": null, "doc": "If email address is given, service will notify the email address when service request is processed."},
+            { "name": "phone", "type": ["null", "string"], "default": null },
+            { "name": "first_name", "type": ["null", "double"], "default": null},
+            { "name": "last_name", "type": ["null", "string"], "default": null },
+            { "name": "description", "type": ["null", "string"], "default": null },
+            { "name": "media_url", "type": ["null", "string"], "default": null, "doc": "API supports the most typical media formats like jpg, png, gif,.. Note, that URL links must end with a correct filetype like .jpg. Http and https URLs are supported" }
+        ] 
+}]
