@@ -22,3 +22,7 @@
 	path = Common-Endpoints/Observations-From-Postgres
 	url = https://github.com/sheenacodes/fvh_postgres_out.git
 	branch = deliverable_11_2020
+[submodule "UC6-Bus-Charging"]
+	path = UC6-Bus-Charging
+	url = https://github.com/sheenacodes/fvh_buschargers_in.git
+	branch = deliverable_11_2020
