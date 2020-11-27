@@ -26,3 +26,6 @@
 	path = UC6-Bus-Charging
 	url = https://github.com/sheenacodes/fvh_buschargers_in.git
 	branch = deliverable_11_2020
+[submodule "Orchestration/App-Server-Scripts"]
+	path = Orchestration/App-Server-Scripts
+	url = https://github.com/sheenacodes/Finest-App-Server-Template.git
