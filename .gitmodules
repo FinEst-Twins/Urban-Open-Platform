@@ -29,10 +29,6 @@
 [submodule "Orchestration/App-Server-Scripts"]
 	path = Orchestration/App-Server-Scripts
 	url = https://github.com/sheenacodes/Finest-App-Server-Template.git
-[submodule "Common-Endpoints/Platform-API-specifications"]
-	path = Common-Endpoints/Platform-API-specifications
-	url = https://github.com/sheenacodes/finest-apispec.git
 [submodule "Common-Endpoints/Tyk-Server-Scripts"]
 	path = Common-Endpoints/Tyk-Server-Scripts
 	url = https://github.com/sheenacodes/Finest-Tyk-Server-Template.git
-
