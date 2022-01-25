@@ -15,7 +15,6 @@ State options:
 
 
 | ID | Title | Tag |
-
 | ----- | ------ | ----- |
 | UC1 | Noise Sensor | NOISE |
 | UC2 | Smart Home | LORAWAN |
