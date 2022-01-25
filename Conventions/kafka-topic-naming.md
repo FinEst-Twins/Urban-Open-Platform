@@ -2,7 +2,7 @@
 
 ### SensorThings Datastreams
 
-| Project | State | Provider | Use Case Ref | Domain |
+| Project | State | Provider | Use Case | Domain |
 | -------- | -------- | -------- | ---- | -------- |
 | FINEST | STAGING | DIGITA | UC01 | NOISE |
 
@@ -13,8 +13,8 @@ State definitions:
 
 ### Finest Twins Use Cases
 
-| # | Title | Tag |
-| --- | ------- | ----- |
+| ID | Title | Tag |
+| ----- | ------- | ----- |
 | UC1 | Noise Sensor | NOISE |
 | UC2 | Smart Home | LORAWAN |
 | UC3 | Solar Panel | SOLAR |
