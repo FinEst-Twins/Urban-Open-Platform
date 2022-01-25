@@ -4,7 +4,6 @@
 
 | Project | State | Use Case | Domain |
 | -------- | -------- |  ---- | -------- |
-
 | FINEST | STAGING | UC01 | NOISE |
 
 State options:
@@ -16,8 +15,8 @@ State options:
 
 
 | ID | Title | Tag |
-| ----- | ------ | ----- |
 
+| ----- | ------ | ----- |
 | UC1 | Noise Sensor | NOISE |
 | UC2 | Smart Home | LORAWAN |
 | UC3 | Solar Panel | SOLAR |
