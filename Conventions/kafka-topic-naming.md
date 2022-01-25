@@ -1,6 +1,19 @@
-## Kafka Topic Naming Convention
+## Kafka Schema Naming Convention (Aiven Karapace)
 
-### SensorThings Datastreams
+Example: `finest.open311`
+
+| Project | Schema |
+| --- | --- |
+| FINEST | OPEN311 | 
+
+Schema options:
+- **STA** [OGC SensorThings API](https://www.ogc.org/standards/sensorthings) Open, geospatial enabled IoT standard
+- **Open311** [Open311](https://www.open311.org/) Open standard for civic issue tracking
+- **Fidelix** Schema for Fidelix building automation systems (not public)
+- **Schneider** Schema for Schneider Ecostruxure building automation systems (not public)
+- **Sentilo** Schema for Cesva environmental noise sensors
+
+## Kafka Topic Naming Convention
 
 Example: `finest.staging.sta.uc01.noise`
 
@@ -14,10 +27,7 @@ State options:
 - **PRODUCTION** prepared data stream passed through context enhancemend and data quality verifications
 
 Schema options:
-- **STA** [OGC SensorThings API](https://www.ogc.org/standards/sensorthings) Open, geospatial enabled IoT standard
-- **Open311** [Open311](https://www.open311.org/) Open standard for civic issue tracking
-- **Fidelix** Schema for Fidelix building automation systems (not public)
-- **Schneider** Schema for Schneider Ecostruxure building automation systems (not public)
+See schema naming convention above
 
 ### FinEst Twins Use Cases
 
