@@ -2,9 +2,9 @@
 
 ### SensorThings Datastreams
 
-| Project | State | Provider | Use Case | Domain |
-| -------- | -------- | -------- | ---- | -------- |
-| FINEST | STAGING | DIGITA | UC01 | NOISE |
+| Project | State | Use Case | Domain |
+| -------- | -------- |  ---- | -------- |
+| FINEST | STAGING | UC01 | NOISE |
 
 State options:
 - STAGING raw, incoming data that requires processing before utilized; a landing zone for new data
