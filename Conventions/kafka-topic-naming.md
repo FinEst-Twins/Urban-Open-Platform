@@ -6,12 +6,13 @@
 | -------- | -------- | -------- | ---- | -------- |
 | FINEST | STAGING | DIGITA | UC01 | NOISE |
 
-State definitions:
+State options:
 - STAGING raw, incoming data that requires processing before utilized; a landing zone for new data
 - MAINTENANCE data source currently in maintenance mode or malfunctioning
 - PRODUCTION prepared data stream passed through context enhancemend and data quality verifications
 
 ### Finest Twins Use Cases
+
 
 | ID | Title | Tag |
 | ----- | ------- | ----- |
@@ -26,3 +27,4 @@ State definitions:
 | UC9 | Dynamic Attributes | CITYGML |
 | UC10 | Natural Language Processing | NLP |
 | UC11 | Weather Station | WEATHER |
+
