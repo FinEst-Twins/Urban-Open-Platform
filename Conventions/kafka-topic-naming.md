@@ -2,16 +2,22 @@
 
 ### SensorThings Datastreams
 
-Example: `finest.staging.uc01.noise`
+Example: `finest.staging.sta.uc01.noise`
 
-| Project | State | Use Case | Domain Tag |
-| -------- | -------- |  ---- | -------- |
-| FINEST | STAGING | UC01 | NOISE |
+| Project | State | Schema | Use Case | Domain Tag |
+| -------- | -------- | --- | ---- | -------- |
+| FINEST | STAGING | STA | UC01 | NOISE |
 
 State options:
 - **STAGING** raw, incoming data that requires processing before utilized; a landing zone for new data
 - **MAINTENANCE** data source currently in maintenance mode or malfunctioning, maintained for debugging purposes
 - **PRODUCTION** prepared data stream passed through context enhancemend and data quality verifications
+
+Schema options:
+- **STA** [OGC SensorThings API](https://www.ogc.org/standards/sensorthings) Open, geospatial enabled IoT standard
+- **Open311** [Open311](https://www.open311.org/) Open standard for civic issue tracking
+- **Fidelix** Schema for Fidelix building automation systems (not public)
+- **Schneider** Schema for Schneider Ecostruxure building automation systems (not public)
 
 ### FinEst Twins Use Cases
 
