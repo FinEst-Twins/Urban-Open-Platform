@@ -12,6 +12,7 @@ Schema options:
 - **Fidelix** Schema for Fidelix building automation systems (not public)
 - **Schneider** Schema for Schneider Ecostruxure building automation systems (not public)
 - **Sentilo** Schema for Cesva environmental noise sensors
+- **Camel** Schema for Apache Camel integrations based on the connector
 
 ## Kafka Topic Naming Convention
 
