@@ -4,18 +4,20 @@
 
 | Project | State | Use Case | Domain |
 | -------- | -------- |  ---- | -------- |
+
 | FINEST | STAGING | UC01 | NOISE |
 
 State options:
-- STAGING raw, incoming data that requires processing before utilized; a landing zone for new data
-- MAINTENANCE data source currently in maintenance mode or malfunctioning
-- PRODUCTION prepared data stream passed through context enhancemend and data quality verifications
+- ##STAGING## raw, incoming data that requires processing before utilized; a landing zone for new data
+- ##MAINTENANCE## data source currently in maintenance mode or malfunctioning
+- ##PRODUCTION## prepared data stream passed through context enhancemend and data quality verifications
 
 ### Finest Twins Use Cases
 
 
 | ID | Title | Tag |
-| ----- | ------- | ----- |
+| ----- | ------ | ----- |
+
 | UC1 | Noise Sensor | NOISE |
 | UC2 | Smart Home | LORAWAN |
 | UC3 | Solar Panel | SOLAR |
