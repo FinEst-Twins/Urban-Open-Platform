@@ -2,21 +2,23 @@
 
 ### SensorThings Datastreams
 
-| Project | State | Use Case | Domain |
+Example: `finest.staging.uc01.noise`
+
+| Project | State | Use Case | Domain Tag |
 | -------- | -------- |  ---- | -------- |
 | FINEST | STAGING | UC01 | NOISE |
 
 State options:
-- ##STAGING## raw, incoming data that requires processing before utilized; a landing zone for new data
-- ##MAINTENANCE## data source currently in maintenance mode or malfunctioning
-- ##PRODUCTION## prepared data stream passed through context enhancemend and data quality verifications
+- **STAGING** raw, incoming data that requires processing before utilized; a landing zone for new data
+- **MAINTENANCE** data source currently in maintenance mode or malfunctioning, maintained for debugging purposes
+- **PRODUCTION** prepared data stream passed through context enhancemend and data quality verifications
 
-### Finest Twins Use Cases
+### FinEst Twins Use Cases
 
-
-| ID | Title | Tag |
-| ----- | ------ | ----- |
-| UC1 | Noise Sensor | NOISE |
+| ID  | Title | Domain Tag |
+| ------------- | ------------- | ------------- |
+| UC0  | Unknown | NA  |
+| UC1  | Noise Sensor | NOISE |
 | UC2 | Smart Home | LORAWAN |
 | UC3 | Solar Panel | SOLAR |
 | UC4 | Street Lighting | STREETLIGHT |
