@@ -38,18 +38,18 @@ See schema naming convention above
 
 ### FinEst Twins Use Cases
 
-| ID  | Title | Domain Tag |
-| ------------- | ------------- | ------------- |
-| UC0  | Unknown | NA  |
-| UC1  | Noise Sensor | NOISE |
-| UC2 | Smart Home | LORAWAN |
-| UC3 | Solar Panel | SOLAR |
-| UC4 | Street Lighting | STREETLIGHT |
-| UC5 | EV Charging | EV |
-| UC6 | People Counter | PEOPLECOUNTER |
-| UC7 | Moving Vehicle | TELEMETRY |
-| UC8 | Building Automation Systems | BAS |
-| UC9 | Dynamic Attributes | CITYGML |
-| UC10 | Natural Language Processing | NLP |
-| UC11 | Weather Station | WEATHER |
+| ID  | Title | Vendor | Domain Tag |
+| ------------- | ------------- | ------------- | ---------- |
+| UC0  | Unknown | NA  | NA |
+| UC1  | Noise Sensor | Cesva | NOISE |
+| UC2 | Smart Home | Elsys | LORAWAN |
+| UC3 | Solar Panel | Custom | SOLAR |
+| UC4 | Street Lighting | C2 | STREETLIGHT |
+| UC5 | EV Charging | EKO | EV |
+| UC6 | People Counter | Axis | PEOPLECOUNTER |
+| UC7 | Moving Vehicle | Wapice | TELEMETRY |
+| UC8 | Building Automation Systems | Fidelix | BAS |
+| UC9 | Dynamic Attributes | NA | CITYGML |
+| UC10 | Natural Language Processing | NA | NLP |
+| UC11 | Weather Station | TBD | WEATHER |
 
