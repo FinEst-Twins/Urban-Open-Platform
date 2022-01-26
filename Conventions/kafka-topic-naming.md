@@ -6,6 +6,12 @@ Example: `finest.open311`
 | --- | --- |
 | FINEST | OPEN311 | 
 
+Project options:
+- **FINEST** FinEst Twins Smart City Centre of Excellence (H2020, 2019 - 2026)
+- **FVH** Forum Virium Helsinki ongoing projects without link to a specific project
+- **LIDO** City of Helsinki situational awareness for the traffic management
+- **RAUNET** City of Helsinki facility management data integrations
+
 Schema options:
 - **STA** [OGC SensorThings API](https://www.ogc.org/standards/sensorthings) Open, geospatial enabled IoT standard
 - **Open311** [Open311](https://www.open311.org/) Open standard for civic issue tracking
