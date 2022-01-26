@@ -14,11 +14,11 @@ Project options:
 
 Schema options:
 - **STA** [OGC SensorThings API](https://www.ogc.org/standards/sensorthings) Open, geospatial enabled IoT standard
-- **Open311** [Open311](https://www.open311.org/) Open standard for civic issue tracking
-- **Fidelix** Schema for Fidelix building automation systems (not public)
-- **Schneider** Schema for Schneider Ecostruxure building automation systems (not public)
-- **Sentilo** Schema for Cesva environmental noise sensors
-- **Camel** Schema for Apache Camel integrations based on the connector
+- **OPEN311** [Open311](https://www.open311.org/) Open standard for civic issue tracking
+- **FIDELIX** Schema for Fidelix building automation systems (not public)
+- **SCHNEIDER** Schema for Schneider Ecostruxure building automation systems (not public)
+- **SENTILO** Schema for Cesva environmental noise sensors
+- **CAMEL** Schema for Apache Camel integrations based on the connector
 
 ## Kafka Topic Naming Convention
 
