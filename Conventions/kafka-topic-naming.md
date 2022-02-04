@@ -1,4 +1,4 @@
-Quick links: [Kafka Schema](#kafka-schema-naming-convention) 
+Quick links: [Kafka Schema](#kafka-schema-naming-convention) | 
 [Kafka Topic](#kafka-topic-naming-convention) 
 [Feature Collections](#ogc-api-features-collection-naming-convention) 
 [Use Cases](#finest-twins-use-cases)
@@ -57,7 +57,7 @@ Features in Collections may contain specific set of attributes as part of the pr
 **sensorProperties**
 | Property | Description |
 | --- | --- |
-| ID | Operational ID of the sensor site | 
+| id | Operational ID of the sensor site | 
 
 
 ## FinEst Twins Use Cases
