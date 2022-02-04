@@ -46,9 +46,11 @@ Features in Collections may contain specific set of attributes as part of the pr
 | --- | --- |
 | Sensor Sites | sensorProperties | 
 
-### Property Schemas
+### Property Attributes
 
-
+`{
+    "id": 1
+}`
 
 
 ## FinEst Twins Use Cases
