@@ -46,11 +46,12 @@ Features in Collections may contain specific set of attributes as part of the pr
 | --- | --- |
 | Sensor Sites | sensorProperties | 
 
-### Property Attributes
+### Property Attribute Schemas
 
-`{
-    "id": 1
-}`
+**sensorProperties**
+| Property | Description |
+| --- | --- |
+| ID | Operational ID of the sensor site | 
 
 
 ## FinEst Twins Use Cases
