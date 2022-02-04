@@ -42,7 +42,7 @@ State options:
 Schema options:
 See schema naming convention above
 
-Use case adn Domain Tag:
+Use case and Domain Tag:
 See [Use Cases](#finest-twins-use-cases)
 
 ## OGC API Features Collection Naming Convention
