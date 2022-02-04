@@ -36,6 +36,21 @@ State options:
 Schema options:
 See schema naming convention above
 
+## OGC API Features Collection Naming Convention
+
+Example: `Sensor Sites`
+
+Features in Collections may contain specific set of attributes as part of the properties element:
+
+| Collection | Schema |
+| --- | --- |
+| Sensor Sites | sensorProperties | 
+
+### Property Schemas
+
+
+
+
 ### FinEst Twins Use Cases
 
 | ID  | Title | Vendor | Domain Tag |
