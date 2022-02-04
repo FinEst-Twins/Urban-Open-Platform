@@ -51,7 +51,7 @@ Features in Collections may contain specific set of attributes as part of the pr
 
 
 
-### FinEst Twins Use Cases
+## FinEst Twins Use Cases
 
 | ID  | Title | Vendor | Domain Tag |
 | ------------- | ------------- | ------------- | ---------- |
