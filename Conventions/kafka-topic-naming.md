@@ -1,4 +1,9 @@
-## Kafka Schema Naming Convention (Aiven Karapace)
+[Kafka Schema](#kafka-schema-naming-convention)
+[Kafka Topic](#kafka-topic-naming-convention)
+[Use Cases](#finest-twins-use-cases)
+
+
+## Kafka Schema Naming Convention
 
 Example: `finest.open311`
 
