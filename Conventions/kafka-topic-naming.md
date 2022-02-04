@@ -42,7 +42,7 @@ Example: `Sensor Sites`
 
 Features in Collections may contain specific set of attributes as part of the properties element:
 
-| Collection | Schema |
+| Collection | Property Attributes Schema |
 | --- | --- |
 | Sensor Sites | sensorProperties | 
 
