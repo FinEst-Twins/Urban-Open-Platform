@@ -25,6 +25,7 @@ Schema options:
 - **SCHNEIDER** Schema for Schneider Ecostruxure building automation systems (not public)
 - **SENTILO** Schema for Cesva environmental noise sensors
 - **CAMEL** Schema for Apache Camel integrations based on the connector
+- **THINGPARK** Schema for Digita Thingpark service for LoRaWAN sensors
 
 ## Kafka Topic Naming Convention
 
@@ -69,7 +70,7 @@ Features in Collections may contain specific set of attributes as part of the pr
 | ------------- | ------------- | ------------- | ---------- |
 | UC0  | Unknown | NA  | NA |
 | UC1  | Noise Sensor | Cesva | NOISE |
-| UC2 | Smart Home | Elsys | LORAWAN |
+| UC2 | Smart Home | Elsys | HOME |
 | UC3 | Solar Panel | Custom | SOLAR |
 | UC4 | Street Lighting | C2 | STREETLIGHT |
 | UC5 | EV Charging | EKO | EV |
@@ -79,4 +80,7 @@ Features in Collections may contain specific set of attributes as part of the pr
 | UC9 | Dynamic Attributes | NA | CITYGML |
 | UC10 | Natural Language Processing | NA | NLP |
 | UC11 | Weather Station | TBD | WEATHER |
+| UC12 | Energy Meters | Helen | ENERGY |
+| UC13 | LoRaWAN | Digita Thingpark | LORA |
+
 
