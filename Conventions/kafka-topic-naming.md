@@ -6,11 +6,11 @@ Quick links: [Kafka Schema](#kafka-schema-naming-convention) |
 
 ## Kafka Schema Naming Convention
 
-Example: `finest.open311`
+Example: `fvh.open311`
 
 | Project | Schema |
 | --- | --- |
-| FINEST | OPEN311 | 
+| FVH | OPEN311 | 
 
 Project options:
 - **FINEST** FinEst Twins Smart City Centre of Excellence (H2020, 2019 - 2026)
