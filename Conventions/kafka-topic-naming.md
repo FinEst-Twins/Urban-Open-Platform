@@ -82,5 +82,6 @@ Features in Collections may contain specific set of attributes as part of the pr
 | UC11 | Weather Station | TBD | WEATHER |
 | UC12 | Energy Meters | Helen | ENERGY |
 | UC13 | LoRaWAN | Digita Thingpark | LORA |
+| UC14 | Traffic Alert | IoT-NGIN | TMC |
 
 
