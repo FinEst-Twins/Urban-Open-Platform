@@ -1,7 +1,7 @@
 Quick links: [Kafka Schema](#kafka-schema-naming-convention) | 
 [Kafka Topic](#kafka-topic-naming-convention) | 
 [Feature Collections](#ogc-api-features-collection-naming-convention) | 
-[Use Cases](#finest-twins-use-cases)
+[Use Cases](#use-cases)
 
 
 ## Kafka Schema Naming Convention
