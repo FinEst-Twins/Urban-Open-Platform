@@ -64,7 +64,7 @@ Features in Collections may contain specific set of attributes as part of the pr
 | id | Operational ID of the sensor site | 
 
 
-## FinEst Twins Use Cases
+## Use Cases
 
 | ID  | Title | Vendor | Domain Tag |
 | ------------- | ------------- | ------------- | ---------- |
