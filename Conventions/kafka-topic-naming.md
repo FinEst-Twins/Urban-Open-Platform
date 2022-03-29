@@ -66,22 +66,22 @@ Features in Collections may contain specific set of attributes as part of the pr
 
 ## Use Cases
 
-| ID  | Title | Vendor | Domain Tag |
-| ------------- | ------------- | ------------- | ---------- |
-| UC0  | Unknown | NA  | NA |
-| UC1  | Noise Sensor | Cesva | NOISE |
-| UC2 | Smart Home | Elsys | HOME |
-| UC3 | Solar Panel | Custom | SOLAR |
-| UC4 | Street Lighting | C2 | STREETLIGHT |
-| UC5 | EV Charging | EKO | EV |
-| UC6 | People Counter | Axis | PEOPLECOUNTER |
-| UC7 | Moving Vehicle | Wapice | TELEMETRY |
-| UC8 | Building Automation Systems | Fidelix | BAS |
-| UC9 | Dynamic Attributes | NA | CITYGML |
-| UC10 | Natural Language Processing | NA | NLP |
-| UC11 | Weather Station | TBD | WEATHER |
-| UC12 | Energy Meters | Helen | ENERGY |
-| UC13 | LoRaWAN | Digita Thingpark | LORA |
-| UC14 | Traffic Alert | IoT-NGIN | TMC |
+| ID  | Title | Vendor | Protocol | Domain Tag |
+| ------------- | ------------- | ------------- | ---------- | ---------- |
+| UC0  | Unknown | NA  | | NA |
+| UC1  | Noise Sensor | Cesva | Sentilo | NOISE |
+| UC2 | Smart Home | Elsys |  | HOME |
+| UC3 | Solar Panel | Custom |  | SOLAR |
+| UC4 | Street Lighting | C2 | | STREETLIGHT |
+| UC5 | EV Charging | EKO | PLUGIT | EV |
+| UC6 | People Counter | Axis | | PEOPLECOUNTER |
+| UC7 | Moving Vehicle | Wapice | | TELEMETRY |
+| UC8 | Building Automation Systems | Fidelix | |  BAS |
+| UC9 | Dynamic Attributes | NA | NA | CITYGML |
+| UC10 | Natural Language Processing | NA | NA |  NLP |
+| UC11 | Weather Station | TBD | | WEATHER |
+| UC12 | Energy Meters | Helen | | ENERGY |
+| UC13 | LoRaWAN | Digita Thingpark | | LORA |
+| UC14 | Traffic Alert | IoT-NGIN | | TMC |
 
 
