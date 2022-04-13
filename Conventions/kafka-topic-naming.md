@@ -26,6 +26,7 @@ Schema options:
 - **SENTILO** Schema for Cesva environmental noise sensors
 - **CAMEL** Schema for Apache Camel integrations based on the connector
 - **THINGPARK** Schema for Digita Thingpark service for LoRaWAN sensors
+- **SNMP** Schema for SNMP trap messages from Camel
 
 ## Kafka Topic Naming Convention
 
