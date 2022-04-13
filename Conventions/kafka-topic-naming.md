@@ -20,7 +20,7 @@ Project options:
 
 Schema options:
 - **STA** [OGC SensorThings API](https://www.ogc.org/standards/sensorthings) Open, geospatial enabled IoT standard
-- **OPEN311** [Open311](https://www.open311.org/) Open standard for civic issue tracking
+- **OPEN311** [Open311](https://www.open311.org/) Open standard for civic issue tracking, including [CitySDK extensions](https://dev.hel.fi/apis/open311)
 - **FIDELIX** Schema for Fidelix building automation systems (not public)
 - **SCHNEIDER** Schema for Schneider Ecostruxure building automation systems (not public)
 - **SENTILO** Schema for Cesva environmental noise sensors
@@ -83,5 +83,5 @@ Features in Collections may contain specific set of attributes as part of the pr
 | UC12 | Energy Meters | Helen | | ENERGY |
 | UC13 | LoRaWAN | Digita Thingpark | | LORA |
 | UC14 | Traffic Alert | IoT-NGIN | | TMC |
-
+| UC15 | Property Issue Tracker | N/A | Open311 | RAUNET-ALERT |
 
