@@ -14,7 +14,7 @@ Example: `fvh.open311`
 | --- | --- |
 | FVH | OPEN311 | 
 
-Project options:
+Organization or project options:
 - **FINEST** FinEst Twins Smart City Centre of Excellence (H2020, 2019 - 2026)
 - **FVH** Forum Virium Helsinki ongoing projects without link to a specific project
 - **LIDO** City of Helsinki situational awareness for the traffic management
