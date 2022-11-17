@@ -56,9 +56,9 @@ Example: `fvh.lido.m680`
 
 Features in Collections may contain specific set of attributes as part of the properties element:
 
-| Organization | Project/Service | Collection | Description |
-| --- | --- | --- | --- |
-| FVH | LIDO | m680 | m680 traffic counters in LIDO -project |
+| Organization | Project/Service | Collection | ID | Description |
+| --- | --- | --- | --- | --- |
+| FVH | LIDO | ATC | 1234 | traffic counters in LIDO -project |
 
 ### Organization options:
 
@@ -71,7 +71,7 @@ Features in Collections may contain specific set of attributes as part of the pr
 [See above](#kafka-schema-naming-convention)
 
 ### Collection options:
-
+- **ATC** Automatic Traffic Counter (in Finnish LAM)
 
 ## Use Cases
 
