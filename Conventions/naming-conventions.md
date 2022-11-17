@@ -54,7 +54,7 @@ Example: `fvh.lido.m680`
 
 Features in Collections may contain specific set of attributes as part of the properties element:
 
-| Organization | Project/Service | Collection | Description [
+| Organization | Project/Service | Collection | Description |
 | --- | --- | --- | --- |
 | FVH | LIDO | m680 | m680 traffic counters in LIDO -project |
 
