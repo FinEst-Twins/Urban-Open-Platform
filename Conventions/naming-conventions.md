@@ -64,7 +64,7 @@ Features in Collections may contain specific set of attributes as part of the pr
 
 - **FVH** Forum Virium Helsinki
 - **HEL** City of Helsinki
-- **COE** FinEst Twins Smart City Center of Excellence
+- **FINEST** FinEst Twins Smart City Center of Excellence
 - **HURC** Helsinki-Uusimaa Regional Council
 
 ### Project/Service options:
