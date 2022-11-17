@@ -1,6 +1,6 @@
 Quick links: [Kafka Schema](#kafka-schema-naming-convention) | 
 [Kafka Topic](#kafka-topic-naming-convention) | 
-[Feature Collections](#ogc-api-features-collection-naming-convention) | 
+[Feature Identifiers](#ogc-api-features-identifiers) | 
 [Use Cases](#use-cases)
 
 
@@ -17,6 +17,7 @@ Project options:
 - **FVH** Forum Virium Helsinki ongoing projects without link to a specific project
 - **LIDO** City of Helsinki situational awareness for the traffic management
 - **RAUNET** City of Helsinki facility management data integrations
+- **R4C** Regions for Climate (Horizon Europe, 2023-2028)
 
 Schema options:
 - **STA** [OGC SensorThings API](https://www.ogc.org/standards/sensorthings) Open, geospatial enabled IoT standard
@@ -47,22 +48,27 @@ See schema naming convention above
 Use case and Domain Tag:
 See [Use Cases](#finest-twins-use-cases)
 
-## OGC API Features Collection Naming Convention
+## OGC API Features Identifiers
 
-Example: `Sensor Sites`
+Example: `fvh.lido.m680`
 
 Features in Collections may contain specific set of attributes as part of the properties element:
 
-| Collection | Property Attributes Schema |
-| --- | --- |
-| Sensor Sites | sensorProperties | 
+| Organization | Project/Service | Collection | Description [
+| --- | --- | --- | --- |
+| FVH | LIDO | m680 | m680 traffic counters in LIDO -project |
 
-### Property Attribute Schemas
+### Organization options:
 
-**sensorProperties**
-| Property | Description |
-| --- | --- |
-| id | Operational ID of the sensor site | 
+- **FVH** Forum Virium Helsinki
+- **HEL** City of Helsinki
+- **COE** FinEst Twins Smart City Center of Excellence
+- **HURC** Helsinki-Uusimaa Regional Council
+
+### Project/Service options:
+[See above](#kafka-topic-naming-convention)
+
+### Collection options:
 
 
 ## Use Cases
