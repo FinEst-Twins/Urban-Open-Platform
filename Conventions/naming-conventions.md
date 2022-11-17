@@ -68,7 +68,7 @@ Features in Collections may contain specific set of attributes as part of the pr
 - **HURC** Helsinki-Uusimaa Regional Council
 
 ### Project/Service options:
-[See above](#kafka-topic-naming-convention)
+[See above](#kafka-schema-naming-convention)
 
 ### Collection options:
 
