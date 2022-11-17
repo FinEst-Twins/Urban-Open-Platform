@@ -52,7 +52,7 @@ See [Use Cases](#finest-twins-use-cases)
 
 ## OGC API Features Identifiers
 
-Example: `fvh.lido.m680`
+Example: `fvh.lido.atc.1234`
 
 Features in Collections may contain specific set of attributes as part of the properties element:
 
