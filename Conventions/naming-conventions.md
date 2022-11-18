@@ -60,7 +60,8 @@ Features in Collections may contain specific set of attributes as part of the pr
 | --- | --- | --- | --- | --- | --- |
 | FI | FVH | LIDO | ATC | 1234 | traffic counters in LIDO -project |
 
-The namespace without ID is used as the `inspireId.identifier.namespace`
+The definition of unique identifier aims to be compliant with the INSPIRE requirements while not registered in national registry.
+In FME, the namespace without ID is used as the `inspireId.identifier.namespace`
 
 ### Organization options:
 
