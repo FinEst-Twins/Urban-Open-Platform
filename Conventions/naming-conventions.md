@@ -60,6 +60,8 @@ Features in Collections may contain specific set of attributes as part of the pr
 | --- | --- | --- | --- | --- |
 | FVH | LIDO | ATC | 1234 | traffic counters in LIDO -project |
 
+The namespace without ID is used as the `inspireId.identifier.namespace`
+
 ### Organization options:
 
 - **FVH** Forum Virium Helsinki
