@@ -52,13 +52,13 @@ See [Use Cases](#finest-twins-use-cases)
 
 ## OGC API Features Identifiers
 
-Example: `fvh.lido.atc.1234`
+Example: `fi.fvh.lido.atc.1234`
 
 Features in Collections may contain specific set of attributes as part of the properties element:
 
-| Organization | Project/Service | Collection | ID | Description |
-| --- | --- | --- | --- | --- |
-| FVH | LIDO | ATC | 1234 | traffic counters in LIDO -project |
+| Country Code | Organization | Project/Service | Collection | ID | Description |
+| --- | --- | --- | --- | --- | --- |
+| FI | FVH | LIDO | ATC | 1234 | traffic counters in LIDO -project |
 
 The namespace without ID is used as the `inspireId.identifier.namespace`
 
