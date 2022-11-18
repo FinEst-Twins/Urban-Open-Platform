@@ -20,6 +20,7 @@ Organization or project options:
 - **LIDO** City of Helsinki situational awareness for the traffic management
 - **RAUNET** City of Helsinki facility management data integrations
 - **R4C** Regions for Climate (Horizon Europe, 2023-2028)
+- **MSL** mySMARTLife (Horizon 2020, 2016 - 2022)
 
 Schema options:
 - **STA** [OGC SensorThings API](https://www.ogc.org/standards/sensorthings) Open, geospatial enabled IoT standard
