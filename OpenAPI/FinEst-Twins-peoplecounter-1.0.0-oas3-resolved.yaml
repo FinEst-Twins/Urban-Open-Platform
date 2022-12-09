@@ -1,0 +1,123 @@
+---
+openapi: 3.0.0
+info:
+  title: People Counter Observation API
+  description: This API accepts counter input from people counter camera sensors
+  contact:
+    email: sheena.puthanpurayil@forumvirium.fi
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0-oas3
+servers:
+- url: https://virtserver.swaggerhub.com/FinEst-Twins/peoplecounter/1.0.0
+tags:
+- name: Observations
+paths:
+  /peoplecounter/v1:
+    post:
+      tags:
+      - Observations
+      summary: adds count observations to UoP
+      description: Adds entry/exit/pass observations to the system
+      requestBody:
+        description: Observations from Sensors
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EventNotificationAlert'
+      responses:
+        "200":
+          description: Data has been forwarded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/success_resp'
+        "400":
+          description: unsuccesful request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/failure_resp'
+components:
+  schemas:
+    EventNotificationAlert:
+      required:
+      - sensors
+      type: object
+      properties:
+        ipAddress:
+          type: string
+          example: 0.2.1.0
+        protocolType:
+          type: string
+          example: http
+        macAddress:
+          type: string
+          example: xx:xx:xx:xx:xx:xx
+        channelID:
+          type: string
+          example: "1"
+        dateTime:
+          type: string
+          format: date-time
+          example: 2020-04-19T17:35:00Z
+        activePostCount:
+          type: string
+          example: "1000"
+        eventType:
+          type: string
+          example: "5"
+        eventState:
+          type: string
+          example: active
+        eventDescription:
+          type: string
+        channelName:
+          type: string
+        peopleCounting:
+          $ref: '#/components/schemas/PeopleCounting'
+    PeopleCounting:
+      required:
+      - enter
+      - exit
+      - pass
+      - statisticalMethods
+      type: object
+      properties:
+        statisticalMethods:
+          type: string
+          example: timeRange
+        TimeRange:
+          $ref: '#/components/schemas/TimeRange'
+        enter:
+          type: integer
+          example: 1
+        exit:
+          type: integer
+          example: 1
+        pass:
+          type: integer
+          example: 1
+    TimeRange:
+      properties:
+        startTime:
+          type: string
+          format: date-time
+          example: 2020-04-19T17:35:00Z
+        endTime:
+          type: string
+          format: date-time
+          example: 2020-04-19T17:35:00Z
+    success_resp:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+    failure_resp:
+      type: object
+      properties:
+        status:
+          type: string
+          example: failure

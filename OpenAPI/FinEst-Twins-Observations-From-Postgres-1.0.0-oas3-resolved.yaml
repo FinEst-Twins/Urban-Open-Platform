@@ -1,0 +1,170 @@
+---
+openapi: 3.0.0
+info:
+  title: Reading Observations (Internal)
+  description: Endpoint to read observations from Postgres Sink
+  version: 1.0.0-oas3
+servers:
+- url: https://virtserver.swaggerhub.com/FinEst-Twins/Finest-Platform-Services/1.0.0
+paths:
+  /observation:
+    get:
+      summary: query for noise observations from UoP
+      parameters:
+      - name: case
+        in: query
+        description: name of the usecase(owner)
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: thing
+        in: query
+        description: name of the device
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: minresulttime
+        in: query
+        description: time at which observation data was received at the data platform
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: YYYY-MM-DDTHH:MM:SS.ff
+          type: string
+          format: date
+      - name: maxresulttime
+        in: query
+        description: time at which observation data was received at the data platform
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: YYYY-MM-DDTHH:MM:SS.ff
+          type: string
+          format: date
+      - name: minphenomtime
+        in: query
+        description: sampling time recorded and received with observation data
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: YYYY-MM-DDTHH:MM:SS.ff
+          type: string
+          format: date
+      - name: maxphenomtime
+        in: query
+        description: sampling time recorded and received with observation data
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: YYYY-MM-DDTHH:MM:SS.ff
+          type: string
+          format: date
+      responses:
+        "200":
+          description: succesfull request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/observations'
+        "400":
+          description: bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/get_resp'
+components:
+  schemas:
+    get_resp:
+      type: object
+      properties:
+        message:
+          type: string
+          example: unrecognized 'thing'
+    observations:
+      type: object
+      properties:
+        result:
+          type: string
+        result time:
+          type: string
+        phenonmenon time:
+          type: string
+        datastream_id:
+          type: string
+        thing:
+          type: string
+        sensor:
+          type: string
+  parameters:
+    case_param:
+      name: case
+      in: query
+      description: name of the usecase(owner)
+      required: true
+      style: form
+      explode: true
+      schema:
+        type: string
+    thing_param:
+      name: thing
+      in: query
+      description: name of the device
+      required: true
+      style: form
+      explode: true
+      schema:
+        type: string
+    minresulttime_param:
+      name: minresulttime
+      in: query
+      description: time at which observation data was received at the data platform
+      required: false
+      style: form
+      explode: true
+      schema:
+        pattern: YYYY-MM-DDTHH:MM:SS.ff
+        type: string
+        format: date
+    maxresulttime_param:
+      name: maxresulttime
+      in: query
+      description: time at which observation data was received at the data platform
+      required: false
+      style: form
+      explode: true
+      schema:
+        pattern: YYYY-MM-DDTHH:MM:SS.ff
+        type: string
+        format: date
+    minphenomtime_param:
+      name: minphenomtime
+      in: query
+      description: sampling time recorded and received with observation data
+      required: false
+      style: form
+      explode: true
+      schema:
+        pattern: YYYY-MM-DDTHH:MM:SS.ff
+        type: string
+        format: date
+    maxphenomtime_param:
+      name: maxphenomtime
+      in: query
+      description: sampling time recorded and received with observation data
+      required: false
+      style: form
+      explode: true
+      schema:
+        pattern: YYYY-MM-DDTHH:MM:SS.ff
+        type: string
+        format: date

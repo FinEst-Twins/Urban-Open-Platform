@@ -1,0 +1,104 @@
+---
+openapi: 3.0.0
+info:
+  title: Post Observation to Kafka API (Internal)
+  description: This API accepts observations in the sensor things compatible schema and produces it to Kafka
+  contact:
+    email: sheena.puthanpurayil@forumvirium.fi
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0-oas3
+servers:
+- url: https://virtserver.swaggerhub.com/FinEst-Twins/Observations-To-Kafka/1.0.0
+tags:
+- name: Observations
+paths:
+  /observation:
+    post:
+      tags:
+      - Observations
+      summary: adds noise observations to UoP
+      requestBody:
+        description: Observations from Sensors
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/observation-data'
+      responses:
+        "202":
+          description: Data has been forwarded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/success_resp'
+        "400":
+          description: unsuccesful request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/failure_resp'
+components:
+  schemas:
+    observation-data:
+      required:
+      - observations
+      - topic
+      type: object
+      properties:
+        topic:
+          type: string
+          example: topic-name
+        observation:
+          $ref: '#/components/schemas/observation'
+    observation:
+      required:
+      - datastream_id
+      - featureofintrest_link
+      - parameters
+      - phenomenontime_begin
+      - phenomenontime_end
+      - result
+      - resultquality
+      - resulttime
+      - validtime_begin
+      - validtime_end
+      properties:
+        phenomenontime_begin:
+          type: integer
+        phenomenontime_end:
+          type: integer
+          example: 1606417048951
+        resulttime:
+          type: integer
+          example: 1606417048951
+        result:
+          type: string
+          example: "12.2"
+        resultquality:
+          type: string
+        validtime_begin:
+          type: integer
+          example: 1606417048951
+        validtime_end:
+          type: integer
+          example: 1606417048951
+        parameters:
+          type: string
+        datastream_id:
+          type: integer
+          example: 134
+        featureofintrest_link:
+          type: string
+    success_resp:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+    failure_resp:
+      type: object
+      properties:
+        status:
+          type: string
+          example: failure

@@ -1,0 +1,108 @@
+---
+openapi: 3.0.0
+info:
+  title: UC03-Solar-Inverter
+  description: The UC03 Solar Inverter data endpoint
+  version: 1.0.0-oas3
+servers:
+- url: /
+paths:
+  /viikkisolar/observation:
+    post:
+      tags:
+      - UC03-SolarInverter
+      summary: adds observations from solar inverter to UoP
+      description: adds observations from solar inverter to UoP
+      parameters:
+      - name: API_KEY
+        in: header
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Observations from Sensors
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InverterReading'
+      responses:
+        "200":
+          description: Data has been forwarded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/success_resp'
+        "400":
+          description: unsuccesful request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/failure_resp'
+components:
+  schemas:
+    InverterReading:
+      type: object
+      properties:
+        name:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        VoltageString1:
+          type: number
+        CurrentString1:
+          type: number
+        OutputString1:
+          type: integer
+        VoltageString2:
+          type: number
+        CurrentString2:
+          type: number
+        OutputString2:
+          type: integer
+        VoltageString3:
+          type: number
+        CurrentString3:
+          type: number
+        OutputString3:
+          type: integer
+        VoltagePhase1:
+          type: number
+        CurrentPhase1:
+          type: number
+        OutputPhase1:
+          type: integer
+        VoltagePhase2:
+          type: number
+        CurrentPhase2:
+          type: number
+        OutputPhase2:
+          type: integer
+        VoltagePhase3:
+          type: number
+        CurrentPhase3:
+          type: number
+        OutputPhase3:
+          type: integer
+        TotalEnergy:
+          type: integer
+        DailyEnery:
+          type: integer
+        Status:
+          type: integer
+        Fault:
+          type: integer
+    success_resp:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+    failure_resp:
+      type: object
+      properties:
+        status:
+          type: string
+          example: failure

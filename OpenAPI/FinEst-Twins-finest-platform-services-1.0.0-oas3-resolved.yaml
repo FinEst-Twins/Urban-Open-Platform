@@ -1,0 +1,549 @@
+---
+openapi: 3.0.0
+info:
+  title: Finest Platform Services (public)
+  description: All the public facing API endpoints of the Finest Platform
+  version: 1.0.0-oas3
+servers:
+- url: https://api.fvh.fi:443
+paths:
+  /cesva/v1/observation:
+    get:
+      tags:
+      - UC01-Noise-Observation
+      summary: query for noise observations from UoP
+      parameters:
+      - name: IDENTITY_KEY
+        in: header
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: thing
+        in: query
+        description: name of the device
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: minresulttime
+        in: query
+        description: time at which observation data was received at the data platform
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: YYYY-MM-DDTHH:MM:SS.ff
+          type: string
+          format: date
+      - name: maxresulttime
+        in: query
+        description: time at which observation data was received at the data platform
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: YYYY-MM-DDTHH:MM:SS.ff
+          type: string
+          format: date
+      - name: minphenomtime
+        in: query
+        description: sampling time recorded and received with observation data
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: YYYY-MM-DDTHH:MM:SS.ff
+          type: string
+          format: date
+      - name: maxphenomtime
+        in: query
+        description: sampling time recorded and received with observation data
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: YYYY-MM-DDTHH:MM:SS.ff
+          type: string
+          format: date
+      responses:
+        "200":
+          description: succesfull request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/observations'
+        "400":
+          description: bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/get_resp'
+    put:
+      tags:
+      - UC01-Noise-Observation
+      summary: adds noise observations to UoP
+      parameters:
+      - name: IDENTITY_KEY
+        in: header
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Observations from Sensors
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NoiseSensors'
+      responses:
+        "200":
+          description: Data has been forwarded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/success_resp'
+        "400":
+          description: unsuccesful request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/failure_resp'
+  /viikkisolar/observation:
+    get:
+      tags:
+      - UC03-SolarInverter
+      parameters:
+      - name: API_KEY
+        in: header
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: thing
+        in: query
+        description: name of the device
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: minresulttime
+        in: query
+        description: time at which observation data was received at the data platform
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: YYYY-MM-DDTHH:MM:SS.ff
+          type: string
+          format: date
+      - name: maxresulttime
+        in: query
+        description: time at which observation data was received at the data platform
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: YYYY-MM-DDTHH:MM:SS.ff
+          type: string
+          format: date
+      - name: minphenomtime
+        in: query
+        description: sampling time recorded and received with observation data
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: YYYY-MM-DDTHH:MM:SS.ff
+          type: string
+          format: date
+      - name: maxphenomtime
+        in: query
+        description: sampling time recorded and received with observation data
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: YYYY-MM-DDTHH:MM:SS.ff
+          type: string
+          format: date
+      responses:
+        "200":
+          description: succesfull request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/observations'
+        "400":
+          description: bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/get_resp'
+    post:
+      tags:
+      - UC03-SolarInverter
+      summary: adds observations from solar inverter to UoP
+      description: adds observations from solar inverter to UoP
+      parameters:
+      - name: API_KEY
+        in: header
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Observations from Sensors
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InverterReading'
+      responses:
+        "200":
+          description: Data has been forwarded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/success_resp'
+        "400":
+          description: unsuccesful request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/failure_resp'
+  /peoplecounter/v1:
+    post:
+      tags:
+      - UC05-PeopleCounter
+      summary: adds entry/exit count observations to UoP
+      description: Adds entry/exit/pass observations to the system
+      parameters:
+      - name: API_KEY
+        in: header
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Observations from Sensors
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EventNotificationAlert'
+      responses:
+        "200":
+          description: Data has been forwarded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/success_resp'
+        "400":
+          description: unsuccesful request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/failure_resp'
+  /wrm247/v1:
+    post:
+      tags:
+      - UC06-Moving-Vehicle
+      summary: adds tractor movement observations to UoP
+      parameters:
+      - name: API_KEY
+        in: header
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Data has been forwarded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/success_resp'
+        "400":
+          description: unsuccesful request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/failure_resp'
+  /ocpp/v16/observation:
+    post:
+      tags:
+      - UC07-Vehicle-Charging
+      summary: adds observations from bus charging to UoP
+      parameters:
+      - name: API_KEY
+        in: header
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Data has been forwarded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/success_resp'
+        "400":
+          description: unsuccesful request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/failure_resp'
+components:
+  schemas:
+    NoiseSensors:
+      required:
+      - sensors
+      type: object
+      properties:
+        sensors:
+          type: array
+          items:
+            $ref: '#/components/schemas/NoiseSensor'
+    NoiseSensor:
+      required:
+      - observation
+      - sensor
+      properties:
+        sensor:
+          type: string
+          example: TA120-T246174-N
+        observations:
+          type: array
+          items:
+            $ref: '#/components/schemas/NoiseObservation'
+    NoiseObservation:
+      required:
+      - timestamp
+      - value
+      properties:
+        value:
+          type: string
+          example: "10.0"
+        timestamp:
+          type: string
+          format: date-time
+    EventNotificationAlert:
+      required:
+      - ipAddress
+      type: object
+      properties:
+        ipAddress:
+          type: string
+          example: 0.2.1.0
+        protocolType:
+          type: string
+          example: http
+        macAddress:
+          type: string
+          example: xx:xx:xx:xx:xx:xx
+        channelID:
+          type: string
+          example: "1"
+        dateTime:
+          type: string
+          format: date-time
+          example: 2020-04-19T17:35:00Z
+        activePostCount:
+          type: string
+          example: "1000"
+        eventType:
+          type: string
+          example: "5"
+        eventState:
+          type: string
+          example: active
+        eventDescription:
+          type: string
+        channelName:
+          type: string
+        peopleCounting:
+          $ref: '#/components/schemas/PeopleCounting'
+    PeopleCounting:
+      required:
+      - enter
+      - exit
+      - pass
+      - statisticalMethods
+      type: object
+      properties:
+        statisticalMethods:
+          type: string
+          example: timeRange
+        TimeRange:
+          $ref: '#/components/schemas/TimeRange'
+        enter:
+          type: integer
+          example: 1
+        exit:
+          type: integer
+          example: 1
+        pass:
+          type: integer
+          example: 1
+    TimeRange:
+      properties:
+        startTime:
+          type: string
+          format: date-time
+          example: 2020-04-19T17:35:00Z
+        endTime:
+          type: string
+          format: date-time
+          example: 2020-04-19T17:35:00Z
+    InverterReading:
+      type: object
+      properties:
+        name:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        VoltageString1:
+          type: number
+        CurrentString1:
+          type: number
+        OutputString1:
+          type: integer
+        VoltageString2:
+          type: number
+        CurrentString2:
+          type: number
+        OutputString2:
+          type: integer
+        VoltageString3:
+          type: number
+        CurrentString3:
+          type: number
+        OutputString3:
+          type: integer
+        VoltagePhase1:
+          type: number
+        CurrentPhase1:
+          type: number
+        OutputPhase1:
+          type: integer
+        VoltagePhase2:
+          type: number
+        CurrentPhase2:
+          type: number
+        OutputPhase2:
+          type: integer
+        VoltagePhase3:
+          type: number
+        CurrentPhase3:
+          type: number
+        OutputPhase3:
+          type: integer
+        TotalEnergy:
+          type: integer
+        DailyEnery:
+          type: integer
+        Status:
+          type: integer
+        Fault:
+          type: integer
+    get_resp:
+      type: object
+      properties:
+        message:
+          type: string
+          example: unrecognized 'thing'
+    success_resp:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+    failure_resp:
+      type: object
+      properties:
+        status:
+          type: string
+          example: failure
+    observations:
+      type: object
+      properties:
+        result:
+          type: string
+        result time:
+          type: string
+        phenonmenon time:
+          type: string
+        datastream_id:
+          type: string
+        thing:
+          type: string
+        sensor:
+          type: string
+  parameters:
+    thing_param:
+      name: thing
+      in: query
+      description: name of the device
+      required: true
+      style: form
+      explode: true
+      schema:
+        type: string
+    minresulttime_param:
+      name: minresulttime
+      in: query
+      description: time at which observation data was received at the data platform
+      required: false
+      style: form
+      explode: true
+      schema:
+        pattern: YYYY-MM-DDTHH:MM:SS.ff
+        type: string
+        format: date
+    maxresulttime_param:
+      name: maxresulttime
+      in: query
+      description: time at which observation data was received at the data platform
+      required: false
+      style: form
+      explode: true
+      schema:
+        pattern: YYYY-MM-DDTHH:MM:SS.ff
+        type: string
+        format: date
+    minphenomtime_param:
+      name: minphenomtime
+      in: query
+      description: sampling time recorded and received with observation data
+      required: false
+      style: form
+      explode: true
+      schema:
+        pattern: YYYY-MM-DDTHH:MM:SS.ff
+        type: string
+        format: date
+    maxphenomtime_param:
+      name: maxphenomtime
+      in: query
+      description: sampling time recorded and received with observation data
+      required: false
+      style: form
+      explode: true
+      schema:
+        pattern: YYYY-MM-DDTHH:MM:SS.ff
+        type: string
+        format: date

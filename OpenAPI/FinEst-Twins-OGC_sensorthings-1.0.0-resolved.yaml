@@ -1,0 +1,941 @@
+---
+openapi: 3.0.0
+info:
+  title: OGC Sensorthings API for Finest Twins UoP
+  description: |
+    Observations and Asset Data for the Urban Open Platform
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: sheena.puthanpurayil@forumvirium.fi
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+- url: https://api.fvh.fi/OGCSensorThings/v2.0/
+  description: SwaggerHub API Auto Mocking
+tags:
+- name: Observations
+  description: Everything about Observations
+- name: Datastreams
+  description: Access to Datastreams
+- name: Things
+  description: Access to Things
+- name: Sensors
+  description: Access to Sensors
+- name: FeaturesOfInterest
+  description: Access to FeaturesOfInterest
+paths:
+  /Observations({id}):
+    get:
+      tags:
+      - Observations
+      summary: Query all observations
+      description: returns observations
+      parameters:
+      - name: id
+        in: path
+        description: Numeric ID of the observation to get
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      - name: API_KEY
+        in: header
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: $select
+        in: query
+        description: to show only selected fields from (featureofinterest,datastream,result,resulttime,phenonmenontimebegin,phenomenontimeend)
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: $expand
+        in: query
+        description: to expand one or many fields from (featureofinterest,datastream)
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+        "400":
+          description: Error
+      security:
+      - api_key: []
+  /Observations:
+    get:
+      tags:
+      - Observations
+      summary: Query all observations
+      description: returns observations
+      parameters:
+      - name: API_KEY
+        in: header
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: $top
+        in: query
+        description: first 'top' no of elements
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int64
+      - name: $skip
+        in: query
+        description: no of entities to skip
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int64
+      - name: $select
+        in: query
+        description: to show only selected fields from (featureofinterest,datastream,result,resulttime,phenonmenontimebegin,phenomenontimeend)
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: featureofinterest
+      - name: $expand
+        in: query
+        description: to expand one or many fields from (featureofinterest,datastream)
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: featureofinterest,datastream
+      - name: $filter
+        in: query
+        description: to filter results. eg resulttime gt 06-09-2021T20:37:01Z
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: $orderby
+        in: query
+        description: to order results by resulttime asc or resulttime desc
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: $resultformat
+        in: query
+        description: to return as an array without metadata
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: datarray
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_1'
+        "400":
+          description: Error
+      security:
+      - api_key: []
+  /Datastreams:
+    get:
+      tags:
+      - Datastreams
+      summary: Query all Datastreams
+      description: returns Datstreams
+      parameters:
+      - name: API_KEY
+        in: header
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: $top
+        in: query
+        description: first 'top' no of elements
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int64
+      - name: $skip
+        in: query
+        description: no of entities to skip/offset
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int64
+      - name: $select
+        in: query
+        description: to show only selected fields - choose from (name,description,sensor,thing,unitofmeasurement)
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: $expand
+        in: query
+        description: to expand one or many fields - sensor,thing
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_2'
+        "400":
+          description: Error
+      security:
+      - api_key: []
+    post:
+      tags:
+      - Datastreams
+      summary: Post a datastream to DB
+      requestBody:
+        $ref: '#/components/requestBodies/Datastream'
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Created'
+        "400":
+          description: Error
+  /Datastreams({id}):
+    get:
+      tags:
+      - Datastreams
+      summary: Query all Datastreams
+      description: returns Datstreams
+      parameters:
+      - name: id
+        in: path
+        description: Numeric ID of the datastream
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      - name: API_KEY
+        in: header
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: $select
+        in: query
+        description: to show only selected fields - choose from (name,description,sensor,thing,unitofmeasurement)
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: $expand
+        in: query
+        description: to expand one or many fields - sensor,thing
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Datastream'
+        "400":
+          description: Error
+      security:
+      - api_key: []
+    delete:
+      tags:
+      - Datastreams
+      summary: delete a datastream object
+      parameters:
+      - name: id
+        in: path
+        description: Numeric ID of the datastream
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deleted'
+        "400":
+          description: Error
+    patch:
+      tags:
+      - Datastreams
+      summary: update a datastream object
+      parameters:
+      - name: id
+        in: path
+        description: Numeric ID of the datastream
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        $ref: '#/components/requestBodies/Datastream'
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Updated'
+        "400":
+          description: Error
+  /Things:
+    get:
+      tags:
+      - Things
+      summary: Query all Things
+      description: returns all Things
+      parameters:
+      - name: API_KEY
+        in: header
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_3'
+        "400":
+          description: Error
+      security:
+      - api_key: []
+    post:
+      tags:
+      - Things
+      summary: Post a datastream to DB
+      requestBody:
+        $ref: '#/components/requestBodies/Thing'
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Created'
+        "400":
+          description: Error
+  /Things({id}):
+    get:
+      tags:
+      - Things
+      summary: Query all Things
+      description: returns Datstreams
+      parameters:
+      - name: id
+        in: path
+        description: Numeric ID of the datastream
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      - name: API_KEY
+        in: header
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Thing'
+        "400":
+          description: Error
+      security:
+      - api_key: []
+    delete:
+      tags:
+      - Things
+      summary: delete a thing object
+      parameters:
+      - name: id
+        in: path
+        description: Numeric ID of the thing
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deleted'
+        "400":
+          description: Error
+    patch:
+      tags:
+      - Things
+      summary: update a thing object
+      parameters:
+      - name: id
+        in: path
+        description: Numeric ID of the thing
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        $ref: '#/components/requestBodies/Thing'
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Updated'
+        "400":
+          description: Error
+  /Sensors:
+    get:
+      tags:
+      - Sensors
+      summary: Query all Sensors
+      parameters:
+      - name: API_KEY
+        in: header
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_4'
+        "400":
+          description: Error
+      security:
+      - api_key: []
+    post:
+      tags:
+      - Sensors
+      summary: Post a Sensor to DB
+      requestBody:
+        $ref: '#/components/requestBodies/Sensor'
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Created'
+        "400":
+          description: Error
+  /Sensors({id}):
+    get:
+      tags:
+      - Sensors
+      summary: Query all Sensors
+      description: returns sensors
+      parameters:
+      - name: id
+        in: path
+        description: Numeric ID of the Sensor
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      - name: API_KEY
+        in: header
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sensor'
+        "400":
+          description: Error
+      security:
+      - api_key: []
+    delete:
+      tags:
+      - Sensors
+      summary: delete a Sensor object
+      parameters:
+      - name: id
+        in: path
+        description: Numeric ID of the Sensor
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deleted'
+        "400":
+          description: Error
+    patch:
+      tags:
+      - Sensors
+      summary: update a Sensor object
+      parameters:
+      - name: id
+        in: path
+        description: Numeric ID of the Sensor
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        $ref: '#/components/requestBodies/Sensor'
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Updated'
+        "400":
+          description: Error
+  /FeaturesOfInterest:
+    get:
+      tags:
+      - FeaturesOfInterest
+      summary: Query all FeaturesOfInterests
+      description: returns Datstreams
+      parameters:
+      - name: API_KEY
+        in: header
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: $top
+        in: query
+        description: first 'top' no of elements
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int64
+      - name: $skip
+        in: query
+        description: no of entities to skip
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int64
+      - name: $select
+        in: query
+        description: to show only selected fields
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: featureofinterest,result
+      - name: $expand
+        in: query
+        description: to expand some fields
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: featureofinterest,FeaturesOfInterest
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FoI'
+        "400":
+          description: Error
+      security:
+      - api_key: []
+    post:
+      tags:
+      - FeaturesOfInterest
+      summary: Post a FeaturesOfInterest to DB
+      requestBody:
+        $ref: '#/components/requestBodies/FoI'
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Created'
+        "400":
+          description: Error
+  /FeaturesOfInterest({id}):
+    get:
+      tags:
+      - FeaturesOfInterest
+      summary: Query all FeaturesOfInterests
+      description: returns Datstreams
+      parameters:
+      - name: id
+        in: path
+        description: Numeric ID of the FeaturesOfInterest
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      - name: API_KEY
+        in: header
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FoI'
+        "400":
+          description: Error
+      security:
+      - api_key: []
+    delete:
+      tags:
+      - FeaturesOfInterest
+      summary: delete a FeaturesOfInterest object
+      parameters:
+      - name: id
+        in: path
+        description: Numeric ID of the FeaturesOfInterest
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deleted'
+        "400":
+          description: Error
+    patch:
+      tags:
+      - FeaturesOfInterest
+      summary: update a FeaturesOfInterest object
+      parameters:
+      - name: id
+        in: path
+        description: Numeric ID of the FeaturesOfInterest
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        $ref: '#/components/requestBodies/FoI'
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Updated'
+        "400":
+          description: Error
+components:
+  schemas:
+    NotFound:
+      type: object
+      properties:
+        message:
+          type: string
+          example: No Observations found with given Id
+    Updated:
+      type: object
+      properties:
+        updated id:
+          type: integer
+    Created:
+      type: object
+      properties:
+        created id:
+          type: integer
+    Deleted:
+      type: object
+      properties:
+        deleted id:
+          type: integer
+    Observation:
+      type: object
+      properties:
+        '@iot.id':
+          type: integer
+          format: int64
+        '@iot.selfLink':
+          type: string
+        phenomenonTimeBegin:
+          type: string
+        resultTime:
+          type: string
+        result:
+          type: string
+        Datastream@iot.navigationLink:
+          type: string
+        FeatureOfInterest@iot.navigationLink:
+          type: string
+    Datastream:
+      type: object
+      properties:
+        '@iot.id':
+          type: integer
+          format: int64
+        '@iot.selfLink':
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        unitofmeasurement:
+          type: string
+        Thing@iot.navigationLink:
+          type: string
+        Sensor@iot.navigationLink:
+          type: string
+    DatastreamP:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        unitofmeasurement:
+          type: string
+        thing_id:
+          type: string
+        sensor_id:
+          type: string
+    Thing:
+      type: object
+      properties:
+        '@iot.id':
+          type: integer
+          format: int64
+        '@iot.selfLink':
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+    ThingP:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+    Sensor:
+      type: object
+      properties:
+        '@iot.id':
+          type: integer
+          format: int64
+        '@iot.selfLink':
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+    SensorP:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+    FoI:
+      type: object
+      properties:
+        '@iot.id':
+          type: integer
+          format: int64
+        '@iot.selfLink':
+          type: string
+        encodingtype:
+          type: string
+        description:
+          type: string
+        feature:
+          type: string
+    FoIP:
+      type: object
+      properties:
+        encodingtype:
+          type: string
+        description:
+          type: string
+        feature:
+          type: string
+    inline_response_200:
+      oneOf:
+      - $ref: '#/components/schemas/Observation'
+      - $ref: '#/components/schemas/NotFound'
+    inline_response_200_1:
+      type: object
+      properties:
+        '@iot.count':
+          type: integer
+          format: int64
+        '@iot.selfLink':
+          type: string
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Observation'
+    inline_response_200_2:
+      type: object
+      properties:
+        '@iot.count':
+          type: integer
+          format: int64
+        '@iot.selfLink':
+          type: string
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Datastream'
+    inline_response_200_3:
+      type: object
+      properties:
+        '@iot.count':
+          type: integer
+          format: int64
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Thing'
+    inline_response_200_4:
+      type: object
+      properties:
+        '@iot.count':
+          type: integer
+          format: int64
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Sensor'
+  requestBodies:
+    Thing:
+      description: Thing object that needs to be added to the DB
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ThingP'
+      required: true
+    Sensor:
+      description: Sensor object that needs to be added to the DB
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SensorP'
+      required: true
+    Datastream:
+      description: Datastream object that needs to be added to the DB
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/DatastreamP'
+      required: true
+    FoI:
+      description: FoI object that needs to be added to the DB
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/FoIP'
+      required: true
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: API_KEY
+      in: header
