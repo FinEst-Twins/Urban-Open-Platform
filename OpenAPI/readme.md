@@ -1,1 +1,1 @@
-## Collection of OpenAPI endpoint definitions, archived from SwaggerHub
+Collection of OpenAPI endpoint definitions, archived from SwaggerHub
