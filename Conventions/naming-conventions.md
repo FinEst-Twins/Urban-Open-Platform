@@ -97,4 +97,6 @@ In FME, the namespace without ID is used as the `inspireId.identifier.namespace`
 | UC13 | LoRaWAN | Digita Thingpark | | LORA |
 | UC14 | Traffic Alert | IoT-NGIN | | TMC |
 | UC15 | Property Issue Tracker | N/A | Open311 | RAUNET-ALERT |
-
+| UC16 | Nuuka REST | Nuuka | N/A | ENERGY
+| UC17 | Nuuka OPEN | Nuuka | N/A | ENERGY
+| UC18 | HSY        | ???   | N/A | WATER?
